@@ -160,12 +160,7 @@ function generateHtml() {
 </head>
 <body>
     <header><h1>My Team</h1></header>
-    <section class='container'>
-        
-    </section>
-    
-</body>
-</html>`;
+    <section class='container'>`;
     htmlArray.push(mainHtml);
     
     for (let i = 0; i < myTeam.length; i++) {
@@ -175,14 +170,14 @@ function generateHtml() {
             <h4>${myTeam[i].role}</h4>
         </div>
         <div class='employee-info'>
-            <p class='id'>${myTeam[i].id}</p>
-            <p class='email'>${myTeam[i].email}</p>`
+            <p class='id'>Id: ${myTeam[i].id}</p>
+            <p class='email'>Email: ${myTeam[i].email}</p>`
         if (myTeam[i].officeNumber) {
-            newCard += `<p>Office Number:${myTeam[i].officeNumber}</p>`
+            newCard += `<p>Office Number: ${myTeam[i].officeNumber}</p>`
         } else if (myTeam[i].github) {
-            newCard += `<p>github:${myTeam[i].github}</p>`
+            newCard += `<p>github: ${myTeam[i].github}</p>`
         } else if (myTeam[i].school) {
-            newCard += `<p>School:${myTeam[i].school}</p>`
+            newCard += `<p>School: ${myTeam[i].school}</p>`
         }
         newCard += `</div>
         </div>`
@@ -191,6 +186,7 @@ function generateHtml() {
         const closingHtml = `
         </div>
         </body>
+        </section>
         </html>`
 
         htmlArray.push(closingHtml);

@@ -4,15 +4,20 @@
 }
 header {
     width: 100%;
-    background: red;
-}
-
-h1 {
+    background: rgb(255, 87, 87);
+    height: 10vh;
     text-align: center;
+    padding: 20px;
+    color: #fff;
 }
 
 h3, h4 {
     padding: 10px;
+}
+
+p {
+    padding: 5px;
+    
 }
 
 .container {
@@ -20,22 +25,24 @@ h3, h4 {
     flex-wrap: wrap;
     padding: 10px;
     margin: 10px;
-    
+    justify-content: center;
 }
 
 .employee-card {
     display: flex;
     flex-direction: column;
     border: 1px solid #333;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
     width: 20%;
     height: 30%;
+    background-color: #DCDCDC;
+    box-shadow: 0 50px 50px -50px black;
 }
 
 .employee-name-role {
-    color: white;
-    background: blue;
+    color: #fff;
+    background: rgb(61, 61, 187);
 }
 
 .employee-info {
@@ -46,9 +53,10 @@ h3, h4 {
     border: 1px solid #333333;
     width: 80%;
     justify-content: center;
+    background-color: #fff;
     
 }
 
-.id .email {
+.id, .email {
     border-bottom: 1px solid #333333;
 }
