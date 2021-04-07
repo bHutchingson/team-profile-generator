@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100%;
+    background: red;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3, h4 {
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.employee-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 10px;
+    width: 20%;
+    height: 30%;
+}
+
+.employee-name-role {
+    color: white;
+    background: blue;
+}
+
+.employee-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #333333;
+    width: 80%;
+    justify-content: center;
+    
+}
+
+.id .email {
+    border-bottom: 1px solid #333333;
+}

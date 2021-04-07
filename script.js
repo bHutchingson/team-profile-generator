@@ -67,7 +67,7 @@ function addNewTeamMember() {
                 addEngineer();
             } else if (data.addNewMember === 'Add intern') {
                 addIntern();
-            } else {}
+            } else {generateHtml()}
         });
 }
 
@@ -142,3 +142,62 @@ function addIntern() {
             
         })
 }
+
+
+let teamMembersFile;
+
+
+function generateHtml() {
+    const htmlArray= [];
+    const mainHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Team Members</title>
+</head>
+<body>
+    <header><h1>My Team</h1></header>
+    <section class='container'>
+        
+    </section>
+    
+</body>
+</html>`;
+    htmlArray.push(mainHtml);
+    
+    for (let i = 0; i < myTeam.length; i++) {
+        let newCard = `<div class='employee-card'>
+        <div class='employee-name-role'>
+            <h3>${myTeam[i].name}</h3>
+            <h4>${myTeam[i].role}</h4>
+        </div>
+        <div class='employee-info'>
+            <p class='id'>${myTeam[i].id}</p>
+            <p class='email'>${myTeam[i].email}</p>`
+        if (myTeam[i].officeNumber) {
+            newCard += `<p>Office Number:${myTeam[i].officeNumber}</p>`
+        } else if (myTeam[i].github) {
+            newCard += `<p>github:${myTeam[i].github}</p>`
+        } else if (myTeam[i].school) {
+            newCard += `<p>School:${myTeam[i].school}</p>`
+        }
+        newCard += `</div>
+        </div>`
+        htmlArray.push(newCard);
+    }
+        const closingHtml = `
+        </div>
+        </body>
+        </html>`
+
+        htmlArray.push(closingHtml);
+
+        fs.writeFile('index.html', htmlArray.join(''), (err) => err? console.error(err) : console.log("Success!"))
+    
+    
+    
+}
+
